@@ -8,12 +8,19 @@ Zainstalujmy Riaka i zbudujmy 5-węzłowy klaster na lokalnej maszynie.
 
 ##Instalacja
 
-Instalacja wymaga maszyny wirtualnej erlanga w wersji co najmniej R15B01, którą można pobrać [tutaj](http://www.erlang.org/download.html).
+Zależności wymagane do właściwej instalacji:
+`sudo apt-get install build-essential libc6-dev-i386 git`
 
-Riak 64-bit dla Ubuntu 12.04+
+Instalacja wymaga również maszyny wirtualnej Erlanga w wersji co najmniej R15B01, którą można pobrać [tutaj](http://www.erlang.org/download.html).
 
-`$ wget http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.6/ubuntu/precise/riak_1.4.6-1_amd64.deb`
-`$ sudo dpkg -i riak_1.4.6-1_amd64.deb`
+Gdy mamy już Erlanga to przechodzimy do właściwej instalacji Riaka:
+
+```
+wget http://s3.amazonaws.com/downloads.basho.com/riak/1.4/1.4.6/riak-1.4.6.tar.gz
+tar zxvf riak-1.4.6.tar.gz
+cd riak-1.4.6
+make all
+```
 
 ##Prezentacja
 
