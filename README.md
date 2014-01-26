@@ -72,11 +72,13 @@ Aby połączyć się z Riakiem, potrzebujesz węzła erlangowego z biblioteką r
 `$ erl -pa $PATH_TO_RIAKC/ebin $PATH_TO_RIAKC/deps/*/ebin`
 
 Dowiesz się, czy zrobiłeś to poprawnie, jeżeli możesz uruchomić poniższą komendę i otrzymać ścieżkę do pliku .beam, zamiast atomu 'non_existing':
+`1> code:which(riakc_pb_socket).`
 
-```
-1> code:which(riakc_pb_socket).
-".../riak-erlang-client/ebin/riakc_pb_socket.beam"
-```
+Będąc w shellu, przekaż serwer Riaka do riakc_pb_socket:start_link/2, aby połączyć się i mieć dostęp do klienta:
+`2> {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 8087).`
+
+Sprawdź swoje połączenie z serwerem przez ping/1.
+`3> riakc_pb_socket:ping(Pid).`
 
 
 ##Prezentacja
