@@ -1,5 +1,5 @@
 %% Prosty przyklad map-reduce'a, zaczerpniety ze strony githubowej
-%% riak-erlang-client
+%% riak-erlang-client (https://github.com/basho/riak-erlang-client)
 
 %% 1. Przygotowanie gruntu:
 %% (dodajemy parę obiektów i tworzymy indeksy)
