@@ -75,7 +75,7 @@ Dowiesz się, czy zrobiłeś to poprawnie, jeżeli możesz uruchomić poniższą
 `1> code:which(riakc_pb_socket).`
 
 Będąc w shellu, przekaż serwer Riaka do riakc_pb_socket:start_link/2, aby połączyć się i mieć dostęp do klienta:
-`2> {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 8087).`
+`2> {ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 10017).`
 
 Sprawdź swoje połączenie z serwerem przez ping/1.
 `3> riakc_pb_socket:ping(Pid).`
