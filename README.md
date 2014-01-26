@@ -6,9 +6,10 @@ Tematem projektu jest Riak -- NoSQLowa baza danych.
 
 Zainstalujmy Riaka i zbudujmy 5-węzłowy klaster na lokalnej maszynie.
 
+
 ##Instalacja i budowanie
 
-Zależności wymagane do właściwej instalacji:
+Zależności systemowe wymagane do właściwej instalacji:
 `$ sudo apt-get install build-essential libc6-dev-i386 git`
 
 Instalacja wymaga również maszyny wirtualnej Erlanga w wersji co najmniej R15B01, którą można pobrać [tutaj](http://www.erlang.org/download.html).
@@ -23,6 +24,7 @@ $ make all
 ```
 
 `make all` zbiera wszyskie zależości, więc nie trzeba się o nie później martwić. Może to potrwać kilka chwil.
+
 
 ##Uruchomienie węzłów
 Kiedy Riak jest już zbudowany, użyjemy Rebara (narzędzia do pakowania i budowania aplikacji erlangowych). 
@@ -39,7 +41,10 @@ $ dev/dev4/bin/riak start
 $ dev/dev5/bin/riak start
 ```
 
-Aby sprawdzić, czy węzły działają można wpisać: `$ ps aux | grep beam`.
+Aby sprawdzić, czy węzły działają można wpisać: 
+
+`$ ps aux | grep beam`
+
 
 ##Tworzenie klastra
 Połączymy 5 węzłów w 1 klaster za pomocą admin tool:
@@ -51,11 +56,15 @@ $ dev/dev5/bin/riak-admin cluster join dev1@127.0.0.1
 ```
 
 Aby nasze zmiany przyniosły efekt musimy odswieżyć plan:
+
 `$ dev/dev1/bin/riak-admin cluster plan`
+
 
 ##Prezentacja
 
 Prezentacja, oprócz pliku pdf w repozytorium, znajduje się [tutaj](http://prezi.com/ibh4sdzlmtms/?utm_campaign=share&utm_medium=copy).
+
+
 
 ###Źródła
 Wykorzystano Basho [quickstart](http://docs.basho.com/riak/latest/quickstart/).
