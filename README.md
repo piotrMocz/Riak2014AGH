@@ -60,6 +60,25 @@ Aby nasze zmiany przyniosły efekt musimy odswieżyć plan:
 `$ dev/dev1/bin/riak-admin cluster plan`
 
 
+##Instalacja klienta
+```
+$ git clone git://github.com/basho/riak-erlang-client.git
+$ cd riak-erlang-client
+$ make
+```
+
+Aby połączyć się z Riakiem, potrzebujesz węzła erlangowego z biblioteką riak-erlang-client (riakc) w ścieżce.
+
+`$ erl -pa $PATH_TO_RIAKC/ebin $PATH_TO_RIAKC/deps/*/ebin`
+
+Dowiesz się, czy zrobiłeś to poprawnie, jeżeli możesz uruchomić poniższą komendę i otrzymać ścieżkę do pliku .beam, zamiast atomu 'non_existing':
+
+```
+1> code:which(riakc_pb_socket).
+".../riak-erlang-client/ebin/riakc_pb_socket.beam"
+```
+
+
 ##Prezentacja
 
 Prezentacja, oprócz pliku pdf w repozytorium, znajduje się [tutaj](http://prezi.com/ibh4sdzlmtms/?utm_campaign=share&utm_medium=copy).
@@ -67,4 +86,6 @@ Prezentacja, oprócz pliku pdf w repozytorium, znajduje się [tutaj](http://prez
 
 
 ###Źródła
-Wykorzystano Basho [quickstart](http://docs.basho.com/riak/latest/quickstart/).
+Wykorzystano Basho [quickstart](http://docs.basho.com/riak/latest/quickstart/)
+oraz
+[riak-erlang-client](https://github.com/basho/riak-erlang-client/)
