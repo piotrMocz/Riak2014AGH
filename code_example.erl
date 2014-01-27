@@ -14,7 +14,7 @@ code:which(riakc_pb_socket).
 %% ==>"/home/ubuntu/riak-erlang-client/ebin/riakc_pb_socket.beam"
 
 %% 3. laczymy sie z nodem Riaka:
-{ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 8087).
+{ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 10017).
 %% ==> {ok,<0.35.0>}
 
 %% 4. sprawdzamy, czy udalo sie polaczyc:
