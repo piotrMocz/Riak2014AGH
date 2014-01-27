@@ -1,7 +1,10 @@
 %% Prosty przyklad map-reduce'a, zaczerpniety ze strony githubowej
 %% riak-erlang-client (https://github.com/basho/riak-erlang-client)
 
-%% 1. Przygotowanie gruntu:
+%% 1. Połączenie się z Riakiem i ustawienie Pid:
+{ok, Pid} = riakc_pb_socket:start_link("127.0.0.1", 10017).
+
+%% 2. Przygotowanie gruntu:
 %% (dodajemy parę obiektów i tworzymy indeksy)
 O1 = riakc_obj:new(<<"mr">>, <<"bob">>, <<"Bob, 26">>).
 
